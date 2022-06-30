@@ -43,28 +43,6 @@ Plugin {
                 icon = terminal
                 action = x-terminal-emulator
             }
-            item {
-                name = Lock Display
-                icon = gnome-lockscreen
-                action = slock
-            }
-            separator {
-            }
-            item {
-                name = Reboot
-                icon = gnome-session-reboot
-                action = sudo reboot
-            }
-            item {
-                name = Shutdown
-                icon = gnome-session-halt
-                action = sudo shutdown -h now
-            }
-            item {
-                name = logout
-                icon = gnome-session-logout
-                action = /usr/lib/fbpanel/fbpanel/xlogout
-            }
         }
     }
 }
