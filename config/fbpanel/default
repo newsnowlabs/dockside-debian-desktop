@@ -1,0 +1,226 @@
+Global {
+    edge = bottom
+    allign = center
+    margin = 0
+    widthtype = percent
+    width = 86
+    height = 40
+    transparent = true
+    tintcolor = #ffffff
+    alpha = 28
+    setdocktype = true
+    setpartialstrut = true
+    autohide = false
+    heightWhenHidden = 2
+    roundcorners = true
+    roundcornersradius = 7
+    layer = above
+    MaxElemHeight = 48
+    xmargin = 0
+    ymargin = 0
+    setlayer = false
+}
+Plugin {
+    type = space
+    config {
+        size = 2
+    }
+}
+Plugin {
+    type = menu
+    config {
+        IconSize = 22
+        image = /usr/share/pixmaps/debian-logo.png
+        systemmenu {
+        }
+        separator {
+        }
+        menu {
+            name = Computer
+            icon = computer
+            item {
+                name = Terminal
+                icon = terminal
+                action = x-terminal-emulator
+            }
+            item {
+                name = Lock Display
+                icon = gnome-lockscreen
+                action = slock
+            }
+            separator {
+            }
+            item {
+                name = Reboot
+                icon = gnome-session-reboot
+                action = sudo reboot
+            }
+            item {
+                name = Shutdown
+                icon = gnome-session-halt
+                action = sudo shutdown -h now
+            }
+            item {
+                name = logout
+                icon = gnome-session-logout
+                action = /usr/lib/fbpanel/fbpanel/xlogout
+            }
+        }
+    }
+}
+Plugin {
+    type = space
+    config {
+        size = 15
+    }
+}
+Plugin {
+    type = launchbar
+    config {
+        button {
+            icon = file-manager
+            tooltip = File Manager
+            action = x-file-manager
+        }
+        button {
+            icon = terminal
+            tooltip = Terminal
+            action = x-terminal-emulator
+        }
+        button {
+            icon = web-browser
+            tooltip = Web Browser
+            action = x-www-browser
+        }
+    }
+}
+Plugin {
+    type = space
+    config {
+        size = 15
+    }
+}
+Plugin {
+    type = wincmd
+    config {
+        icon = gnome-fs-desktop
+        tooltip = Left click to iconify all windows. Middle click to shade them.
+    }
+}
+Plugin {
+    type = space
+    config {
+        size = 15
+    }
+}
+Plugin {
+    type = taskbar
+    expand = true
+    config {
+        ShowIconified = true
+        ShowMapped = true
+        ShowAllDesks = false
+        tooltips = true
+        IconsOnly = false
+        MaxTaskWidth = 150
+    }
+}
+Plugin {
+    type = space
+    config {
+        size = 15
+    }
+}
+Plugin {
+    type = pager
+    config {
+        showwallpaper = true
+    }
+}
+Plugin {
+    type = space
+    config {
+        size = 10
+    }
+}
+Plugin {
+    type = mem
+    expand = false
+    padding = 2
+    config {
+        ShowSwap = false
+    }
+}
+Plugin {
+    type = cpu
+    config {
+        Color = green
+    }
+}
+Plugin {
+    type = net
+    expand = false
+    padding = 0
+    config {
+        interface = eth0
+        TxLimit = 20
+        RxLimit = 190
+        TxColor = violet
+        RxColor = blue
+    }
+}
+Plugin {
+    type = space
+    config {
+        size = 10
+    }
+}
+plugin {
+}
+Plugin {
+    type = tray
+}
+Plugin {
+    type = space
+    config {
+        size = 10
+    }
+}
+Plugin {
+    type = dclock
+    config {
+        ShowSeconds = false
+        HoursView = 24
+        TooltipFmt = %A %x
+    }
+}
+Plugin {
+    type = icons
+    config {
+        DefaultIcon = %%datadir%%/fbpanel/images/default.xpm
+        application {
+            icon = gnome-terminal
+            ClassName = XTerm
+        }
+        application {
+            icon = gnome-terminal
+            ClassName = mlterm
+        }
+        application {
+            icon = gnome-terminal
+            ClassName = URxvt
+        }
+        application {
+            icon = gnome-emacs
+            ClassName = Emacs
+        }
+        application {
+            icon = mozilla-firefox
+            ClassName = Firefox-bin
+        }
+        application {
+            icon = mozilla-firefox
+            ClassName = Firefox
+        }
+    }
+}
