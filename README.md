@@ -2,6 +2,8 @@
 
 A basic Debian desktop for [Dockside](https://dockside.io/).
 
+## Installation with Dockside
+
 Install to Dockside, by writing the following (example) profile to `/data/config/profiles`:
 
 ```
@@ -35,3 +37,18 @@ Install to Dockside, by writing the following (example) profile to `/data/config
    ],
 }
 ```
+
+## Building
+
+Use the included `build.sh` script. At its simplest, to build the
+image for the currently-running platform using the default builder
+(buildkit) run:
+
+```
+./build.sh
+```
+
+Run `./build.sh --help` to see all command-line options. The build
+script supports building for multiple platforms with the `--platforms`
+option and a choice of builders (buildx and [depot](https://depot.dev)]
+with the `--builder` option.

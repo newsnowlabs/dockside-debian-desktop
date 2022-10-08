@@ -1,7 +1,3 @@
-#
-
-# Build with: DOCKER_BUILDKIT=1 docker build -t nn-bullseye-nvm-node-vnc:latest .
-
 FROM node:16-bullseye as stage1
 
 # Use bash shell for 'RUN' commands
