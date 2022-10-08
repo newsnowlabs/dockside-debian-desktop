@@ -8,9 +8,10 @@ FROM debian:bullseye
 SHELL ["/bin/bash", "-c"]
 
 # Install packages
+# - python3-numpy is needed to support build on linux/arm/v7
 RUN  apt-get update && \
      apt-get install -y curl zip unzip sudo && \
-     apt-get install -y python3 git procps tigervnc-standalone-server firefox-esr libpci3 libegl1 menu python3-setuptools openbox fbpanel mlterm sakura && \
+     apt-get install -y python3 python3-numpy git procps tigervnc-standalone-server firefox-esr libpci3 libegl1 menu python3-setuptools openbox fbpanel mlterm sakura && \
      apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install websockify
