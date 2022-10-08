@@ -14,9 +14,13 @@ RUN  apt-get update && \
      apt-get install -y python3 python3-numpy git procps tigervnc-standalone-server firefox-esr libpci3 libegl1 menu python3-setuptools openbox fbpanel mlterm sakura && \
      apt-get clean && rm -rf /var/lib/apt/lists/*
 
+FROM stage1 as stage2
+
 # Install websockify
 RUN  git clone https://github.com/novnc/websockify /opt/websockify && \
      cd /opt/websockify && python3 setup.py install
+
+FROM stage2 as stage3
 
 # Create dockside user
 RUN adduser --uid 1000 --home /home/dockside --shell /bin/bash --disabled-password dockside && chown dockside /opt
